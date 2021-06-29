@@ -1,0 +1,714 @@
+@charset "utf-8";
+
+
+
+/* CSS Document */
+/* リセットcss */
+#gNavi li:hover{
+    opacity: 0.5;
+}
+*{
+margin: 0;
+padding: 0;
+}
+
+body{
+font-family: YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN',' ヒラギノ角ゴProN W3',' メイリオ ', Meiryo,sans-serif;
+}
+
+img{
+display: block;
+height: auto;
+}
+a{
+text-decoration: none;
+
+}
+li {
+list-style-type: none;
+}
+
+/*ヘッダー部分ここから*/
+
+header{
+width: 100%;
+height: 116px;
+margin: 0 auto;
+}
+#logo{
+float: left;
+margin-left: 41px;
+margin-top: 16px;
+width: 20%;
+height: auto;
+}
+
+#logo a{
+display: block;
+}
+
+#logo img{
+width: 100%;
+height: auto;
+display: block;
+}
+/* ハンバーガー */
+#nav-toggle {
+    width: 30px;
+    height: 25px;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+  }
+  #nav-toggle>div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+  #nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      position: absolute;
+      left: 0;
+      transition: all .6s ease;
+    }
+  #nav-toggle span:nth-child(1) {
+    top: 0;
+  }
+
+  #nav-toggle span:nth-child(2) {
+    top: 10px;
+  }
+
+  #nav-toggle span:nth-child(3) {
+    top: 20px;
+  }
+
+  #nav-toggle:hover span:nth-child(1) {
+    top: 4px;
+  }
+
+  #nav-toggle:hover span:nth-child(3) {
+    top: 23px;
+  }
+
+  .open #nav-toggle span {
+    background: #333;
+  }
+
+  .open #nav-toggle span:nth-child(1) {
+    top: 15px;
+    transform: rotate(45deg);
+  }
+
+  .open #nav-toggle span:nth-child(2) {
+    top: 15px;
+    width: 0;
+    left: 50%;
+  }
+
+  .open #nav-toggle span:nth-child(3) {
+    top: 15px;
+    transform: rotate(-45deg);
+  }
+  .open #gNavi2{
+       visibility:visible;
+       opacity:1.0;
+  }
+  /* z-index */
+  #nav-toggle {
+    z-index: 1000;
+  }
+  #container {
+    z-index: 900;
+  }
+  #gNavi2 {
+    background: #f9f9f9ed;
+    color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 990;
+    font-size: 29px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .6s ease, visibility .6s ease;
+  }
+
+  #gNavi2 li{
+    background-color:rgb(166, 188, 246);
+    padding: 20px 50px ;
+    text-decoration: underline;
+  }
+    #gNavi2 a{
+    text-decoration: none;
+    }
+
+
+#gNavi {
+  margin-top: -99px;
+  background: #f9f9f9ed;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 990;
+  font-size: 29px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+#global-nav a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 0;
+  transition: color .6s ease;
+}
+
+
+
+#global-nav a:hover {
+  color: #666;
+}
+
+#global-nav ul {
+  list-style: none;
+}
+
+#global-nav ul li {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: transform .6s ease, opacity .2s ease;
+}
+
+/*#gNavi{
+float: right;
+height: 108px;
+margin-top: 59px;
+}
+
+#gNavi li{
+
+float: left;
+margin-left: 0px;
+
+}
+#gNavi ul li:last-child{
+margin-left: 20px;
+}
+
+#gNavi a{
+  height: 18px;
+ }
+#gNavi a:hover img{
+opacity: 0.6;
+}
+#nav01{
+background-image: url(../images/nav01.png);
+}
+#gNavi span{
+  float: right;
+  background-image: url(../images/quest.png);
+}
+/* パンくずリスト */
+/*#breadcrumb {
+margin-left: 44px;
+}
+
+#breadcrumb li::after {
+  margin-left: 10px;
+  content: '>';
+}
+#breadcrumb ul li{
+display: inline;
+margin-right: 5px;
+}
+#breadcrumb li:last-child::after {
+  content: '';
+}
+
+
+/*mainPhoto部分ここから*/
+
+/*slideshow*/
+
+h1{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+}
+
+#mainPhoto{
+width: 100%;
+height: 268px;
+margin-top: 15px;
+
+position: relative;
+overflow: hidden;
+}
+
+#mainPhoto li{
+width: 100%;
+height: 268px;
+position: absolute;
+top: 20px;
+left: 0;
+opacity: 0;
+}
+#mainPhoto li{
+background-size: 100%;
+background-repeat: no-repeat;
+}
+#mainPhoto li:nth-child(1){
+background-image:url(../images/mainphoto.jpeg);
+animation: slideshow 15s linear 0s infinite;
+}
+#mainPhoto li:nth-child(2){
+background-image: url(../images/mainphoto2.jpeg);
+animation: slideshow 15s linear 5s infinite;
+}
+#mainPhoto li:nth-child(3){
+background-image: url(../images/mainphoto4.jpeg);
+animation: slideshow 15s linear 10s infinite;
+}
+@keyframes slideshow{
+0%{opacity: 0;}
+10%{opacity: 1;}
+30%{opacity: 1;}
+40%{opacity: 0;}
+100%{opacity: 0;}
+}
+
+
+
+/*voice部分ここから*/
+.line{
+width: 100%;
+position: relative;
+margin: 0 auto;
+}
+
+.line::after{
+content: "";
+display: block;
+width: 10%;
+height: 1px;
+background-color: navy;
+position: absolute;
+top:15px;
+right:24px;
+
+
+}
+.line::before{
+content: "";
+display: block;
+width: 10%;
+height: 1px;
+background-color: navy;
+position: absolute;
+top:15px;
+left: 24px;
+}
+
+
+h2{
+padding-top: 40px;
+margin-bottom: 33px;
+font-family: serif;
+font-size: 20px;
+text-align: center;
+}
+
+#voice_img{
+width:100%;
+height:50%;
+display: block;
+}
+#voice{
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+height: 40%;
+}
+/*tooics部分ここから*/
+#topics{
+width: 66%;
+height: auto;
+margin: 0 auto;
+margin-top: 16px;
+}
+
+#topics a{
+display: block;
+margin-bottom: 88px;
+
+}
+.left img{
+margin-left: auto;
+margin-right: auto;
+display: block;
+width: 100%;
+height: auto;
+}
+.left a:hover img{
+opacity: 0.6;
+}
+.right img{
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+height: auto;
+}
+
+.right a:hover img{
+opacity: 0.6;
+}
+/*event部分ここから*/
+#event{
+margin-top: 90px;
+}
+
+#box1 {
+background-image: url(../images/eventphoto.jpeg);
+background-repeat: no-repeat;
+background-size: cover;
+width: 100%;
+height: 50%;
+margin-left: auto;
+margin-right: auto;
+display: flex;
+align-items: center;
+}
+#box1 ul{
+width: 100%;
+display: flex;
+flex-direction: column;
+  padding-bottom: 36px;
+
+}
+#box1 li{
+background-color: white;
+width: 255px;
+color: grey;
+display: flex;
+align-items: center;
+margin-left: auto;
+margin-right: auto;
+margin-top: 40px;
+}
+
+#box1 li p:nth-of-type(1){
+background-color: #4eb5ef;
+color: #fff;
+text-align: center;
+width: 76px;
+}
+
+#box1 li p:nth-of-type(1) span{
+display: block;
+font-size: 30px;
+}
+#box1 li p:nth-of-type(2){
+padding-left: 20px;
+}
+
+
+
+#sub a{
+float: left;
+margin-top: 188px;
+margin-left: 80px;
+margin-bottom: 88px;
+}
+/*news部分ここから*/
+#news{
+margin:0 30px;
+width: 80%;
+}
+
+#news a{
+text-decoration: underline;
+color: grey;
+
+}
+#news th{
+border-style: none;
+display: block;
+float: left;
+}
+#news td{
+border-style: none;
+display: block;
+padding-top: 30px;
+
+}
+.Contents{
+margin-bottom: 88px;
+}
+/*フッター部分ここから*/
+footer{
+background-image: url(../images/fotterback.jpeg);
+width: 100%;
+height: auto;
+
+}
+
+footer img{
+width: 20%;
+height: auto;
+margin-left: auto;
+margin-right: auto;
+}
+footer p{
+width: 50%;
+}
+
+#footerLogo{
+width: 100%;
+height: auto;
+
+padding-top: 20px;
+padding-bottom: 20px;
+
+}
+#footergNavi a{
+color: white;
+}
+
+#footergNavi a:hover{
+color: red;
+}
+
+
+#footergNavi{
+
+padding-bottom: 10px;
+}
+
+#footergNavi ul{
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#copyright{
+width: 100%;
+text-align: center;
+}
+/*資料請求部分ここから*/
+
+h3{
+background-color:#4eb5ef;
+background: linear-gradient(#0974d3,#b7cde2);
+width: 100%;
+height: auto;
+margin: 0 auto;
+margin-bottom: 50px;
+margin-top: 51px;
+text-align: center;
+font-size: 20px;
+box-sizing: border-box;
+}
+
+
+#step{
+display: flex;
+width: 100%;
+height: 20%;
+margin: 0 auto;
+
+font-weight : bold;
+color : #666;
+text-decoration : none;
+background: -moz-linear-gradient(left, #EDEDED, #CCCCCC);
+background: -webkit-linear-gradient(left, #EDEDED, #CCCCCC);
+background: -ms-linear-gradient(left, #EDEDED, #CCCCCC);
+background: linear-gradient(left, #EDEDED, #CCCCCC);
+background-color : #CCCCCC;
+text-shadow : 1px 1px 0 #FFFFFF;
+}
+
+#step li{
+float : left;
+line-height : 30px;
+padding-left: 10px;
+
+}
+#step li::before{
+display : block;
+  width : 15px;
+  height : 30px;
+  border-right : 5px solid #FFFFFF;
+  margin : 0 -6px -30px auto;
+ content : " ";
+  -webkit-transform : skew(30deg);
+  -moz-transform : skew(30deg);
+  transform : skew(30deg);
+}
+#step li::after{
+ display : block;
+  width : 15px;
+  height : 30px;
+  border-right : 5px solid #FFFFFF;
+  margin : -30px -6px 0 auto;
+ content : " ";
+  -webkit-transform : skew(-30deg);
+  -moz-transform : skew(-30deg);
+  transform : skew(-30deg);
+}
+
+#form{
+width: 100%;
+height: 500px;
+margin: 0 auto;
+border-style: solid;
+border-width: 1px;
+border-color: black;
+border-collapse: collapse;
+}
+#form,th,td{
+border-style: solid;
+border-width: 1px;
+border-color: black;
+}
+
+#form th{
+background-color: rgb(167, 201, 237);
+width: 39%;
+}
+
+#form td{
+padding-left: 20px;
+}
+input[type="submit"]{
+display:block;
+padding: 15px 35px;
+background:#e4771a;
+color: #fff;
+font-weight: bold;
+text-align: center;
+border-radius: 10px;
+border: 2px solid #e4771a;
+margin-bottom: 20px;
+width: 70%;
+margin:10px auto 10px auto;
+}
+#submit:hover{
+opacity: 0.5;
+}
+
+
+
+#select_year{
+
+}
+
+#submit{
+display:block;
+padding: 15px 90px;
+background:#e4771a;
+color: #fff;
+font-weight: bold;
+text-align: center;
+border-radius: 10px;
+border: 2px solid #e4771a;
+margin-bottom: 20px;
+width: 200px;
+margin: 44px auto 44px auto;
+}
+#submit:hover{
+opacity: 0.5;
+}
+
+
+textarea{
+width: 93%;
+height: auto;
+overflow-y: scroll;
+}
+.red {
+    display: inline-block;
+    color: red;
+    padding: 4px;
+    margin-left: 20px;
+  }
+/*学校生活部分ここから*/
+
+#SCHOOL{
+
+margin: 0 auto;
+}
+
+#SCHOOL figure{
+width: 100%;
+height: auto;
+
+justify-content: space-between;
+justify-content: space-around;
+}
+#SCHOOL figcaption{
+display: block;
+width: 100%;
+height: 200px;
+margin-top: 10px;
+}
+
+#SCHOOL p{
+position:relative;
+font-size: 26px;
+text-decoration: underline;
+margin-bottom: 10px;
+margin-left: 31px;
+}
+
+#SCHOOL  p::before{
+content:"";
+display:block;
+width:7px;
+height:29px;
+background-color:rgb(128, 128, 128);
+position:absolute;
+top:8px;
+left:-14px;
+}
+
+#SCHOOL a{
+display: block;
+}
+
+#SCHOOL img{
+width: 100%;
+height: auto;
+display: block;
+}
+#SCHOOL figure:nth-child(even){
+flex-direction: row-reverse;
+}
+
+#SCHOOL figure{
+margin-top: 10px;
+margin-bottom: 40px;
+}
